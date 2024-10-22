@@ -1,7 +1,6 @@
 class Expenditure < ApplicationRecord
   belongs_to :user
   validates :amount, :category, :month, presence: true
-  validates :month, numericality: { only_integer: true }
   validate :user_must_be_logged_in
 
   private
